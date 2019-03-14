@@ -1,18 +1,18 @@
 import os
 
-postgres_local_base = 'postgresql://postgres:regards@localhost:5432/Flask_RESTPlus'
+postgres_local_base = 'postgresql://postgres:18345@localhost:5432/apirestplus'
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
-    SECRET_KEY = os.getenv('SECRET_KEY', 'fries')
+    SECRET_KEY = os.getenv('SECRET_KEY', '18345')
     DEBUG = False
 
 
 class DevelopmentConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:regards@localhost:5432/Flask_RESTPlus'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:18345@localhost:5432/apirestplus'
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:regards@localhost:5432/Flask_RESTPlus'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:18345@localhost:5432/apirestplus'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
@@ -26,7 +26,7 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:regards@localhost:5432/Flask_RESTPlus'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:18345@localhost:5432/apirestplus'
 
 
 config_by_name = dict(
