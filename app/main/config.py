@@ -10,7 +10,6 @@ class Config:
 
 
 class DevelopmentConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:18345@localhost:5432/apirestplus'
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:18345@localhost:5432/apirestplus'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -19,7 +18,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     DEBUG = True
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'flask_boilerplate_test.db')
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:18345@localhost:5432/apirestplus'
     PRESERVE_CONTEXT_ON_EXCEPTION = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
