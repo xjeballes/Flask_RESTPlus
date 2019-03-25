@@ -32,9 +32,8 @@ class User(db.Model):
     def __repr__(self):
         return "<User '{}'>".format(self.username)
 
-#encoding
-
-def encode_auth_token(self, user_id):
+#encoding    
+    def encode_auth_token(self, user_id):
         """
         Generates the Auth Token
         :return: string
@@ -52,11 +51,10 @@ def encode_auth_token(self, user_id):
             )
         except Exception as e:
             return e
-
+    
 #decoding
-
- @staticmethod  
-  def decode_auth_token(auth_token):
+    @staticmethod  
+    def decode_auth_token(auth_token):
         """
         Decodes the auth token
         :param auth_token:
@@ -73,3 +71,10 @@ def encode_auth_token(self, user_id):
             return 'Signature expired. Please log in again.'
         except jwt.InvalidTokenError:
             return 'Invalid token. Please log in again.'
+
+
+
+
+
+
+
